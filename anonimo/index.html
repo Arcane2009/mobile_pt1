@@ -1,0 +1,30 @@
+<!--Aula de arrow function e setInterval-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="caixa">
+
+<script>
+    let caixa = document.getElementById("caixa");
+    let x = 0;
+    let y = 0;
+    let direcao = "direita"
+    setInterval(()=>{
+        switch(direcao){
+    case"direita": x+= 5; if(x>800)direcao = "baixo"; break;
+    case"baixo": y+= 5; if(y>850)direcao = "esquerda";break;
+    case"esquerda": x-= 5; if(x<0)direcao = "cima"; break;
+    case"cima": y-= 5; if(y<0)direcao = "direita";break;
+        }
+        caixa.style.left = x+"px";
+        caixa.style.top = y+"px";
+    },10);
+</script>
+</body>
+</html>
